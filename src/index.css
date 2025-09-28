@@ -1,0 +1,69 @@
+/* src/index.css */
+
+/* --- CSS Variables for Easy Theming --- */
+:root {
+  --primary-color: #3498db; /* Blue */
+  --secondary-color: #2ecc71; /* Green */
+  --background-color: #f8f9fa; /* Light Gray */
+  --text-color: #333;
+  --chat-bot-bg: #e9ecef; /* Lighter gray for bot messages */
+  --chat-user-bg: var(--primary-color);
+  --chat-user-text: white;
+  --border-color: #dee2e6;
+  --font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Global Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- Base Body Styles --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Basic Typography --- */
+h1, h2, h3 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+/* --- Buttons --- */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  min-width: 120px;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+  color: #777;
+}
+
+/* --- Form Elements --- */
+input, textarea {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: var(--font-family);
+  font-size: 16px;
+}
