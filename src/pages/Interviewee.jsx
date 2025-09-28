@@ -266,8 +266,8 @@ export default function Interviewee() {
             setTimer(nextQuestion.timer);
         } else {
             setInterviewStarted(false);
-            dispatch(addChatMessage({ candidateId, message: { from: "bot", text: "Interview complete! Generating summary..." } }));
-            setChatMessages((prev) => [...prev, { from: "bot", text: "Interview complete! Generating summary..." }]);
+            dispatch(addChatMessage({ candidateId, message: { from: "bot", text: "Interview complete!" } }));
+            setChatMessages((prev) => [...prev, { from: "bot", text: "Interview complete!" }]);
 
             const allAnswers = questions.map((_, i) => {
                 const candidate = candidates.find((c) => c.id === candidateId);
@@ -276,13 +276,13 @@ export default function Interviewee() {
 
             // You must replace this with an actual API call to your backend
             // Example: const summary = await fetch(`${BACKEND_URL}/api/generateSummary`, { ... });
-            const summary = "AI-generated summary placeholder"; 
+            
 
             dispatch(finishInterview({ candidateId, score: totalScore, summary }));
             dispatch(updateCandidateStatus({ id: candidateId, status: "completed" }));
 
-            dispatch(addChatMessage({ candidateId, message: { from: "bot", text: `Final Score: ${totalScore}.\nSummary: ${summary}` } }));
-            setChatMessages((prev) => [...prev, { from: "bot", text: `Final Score: ${totalScore}.\nSummary: ${summary}` }]);
+            dispatch(addChatMessage({ candidateId, message: { from: "bot", text: `Final Score: ${totalScore}.` } }));
+            setChatMessages((prev) => [...prev, { from: "bot", text: `Final Score: ${totalScore}.` }]);
         }
     };
 
