@@ -139,8 +139,7 @@ export default function Interviewer() {
               <p>No answers submitted yet.</p>
             )}
 
-            <h4>Summary</h4>
-            <p>{selectedCandidate.summary || "No summary available."}</p>
+            
           </>
         )}
       </div>
