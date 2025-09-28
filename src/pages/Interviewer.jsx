@@ -96,7 +96,9 @@ export default function Interviewer() {
               >
                 <div style={{ fontWeight: "bold" }}>{candidate.profile.name}</div>
                 <div>Score: {candidate.finalScore ?? "N/A"}</div>
-                
+                <div style={{ fontSize: "smaller", color: "#555" }}>
+                  {candidate.summary ? candidate.summary.slice(0, 60) + "..." : "No summary"}
+                </div>
               </li>
             ))}
           </ul>
