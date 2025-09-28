@@ -276,13 +276,13 @@ export default function Interviewee() {
 
             // You must replace this with an actual API call to your backend
             // Example: const summary = await fetch(`${BACKEND_URL}/api/generateSummary`, { ... });
-            
+             
 
-            dispatch(finishInterview({ candidateId, score: totalScore, summary }));
+            dispatch(finishInterview({ candidateId, score: totalScore,  }));
             dispatch(updateCandidateStatus({ id: candidateId, status: "completed" }));
 
-            dispatch(addChatMessage({ candidateId, message: { from: "bot", text: `Final Score: ${totalScore}.` } }));
-            setChatMessages((prev) => [...prev, { from: "bot", text: `Final Score: ${totalScore}.` }]);
+            dispatch(addChatMessage({ candidateId, message: { from: "bot", text: `Final Score: ${totalScore}.\n` } }));
+            setChatMessages((prev) => [...prev, { from: "bot", text: `Final Score: ${totalScore}.\n` }]);
         }
     };
 
